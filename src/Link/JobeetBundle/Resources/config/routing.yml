@@ -1,0 +1,21 @@
+link_jobeet_job:
+    resource: "@LinkJobeetBundle/Resources/config/routing/job.yml"
+    prefix:   /job
+
+link_jobeet_homepage:
+    path:     /
+    defaults: { _controller: "LinkJobeetBundle:Job:index" }
+
+LinkJobeetBundle_category:
+    path: /category/{slug}/{page}
+    defaults: { _controller: LinkJobeetBundle:Category:show, page: 1 }
+
+login:
+    path:   /login
+    defaults:  { _controller: LinkJobeetBundle:Default:login }
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:   /logout

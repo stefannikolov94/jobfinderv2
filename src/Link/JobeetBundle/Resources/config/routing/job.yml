@@ -1,0 +1,43 @@
+job_index:
+    path:     /
+    defaults: { _controller: "LinkJobeetBundle:Job:index" }
+    methods:  GET
+
+job_show:
+    path:     /{company}/{location}/{id}/{position}
+    defaults: { _controller: "LinkJobeetBundle:Job:show" }
+    methods:  GET
+    requirements:
+            id: \d+
+
+job_preview:
+    path:     /{company}/{location}/{token}/{position}
+    defaults: { _controller: "LinkJobeetBundle:Job:preview" }
+    methods:  GET
+    requirements:
+            token: \w+
+
+job_new:
+    path:     /new
+    defaults: { _controller: "LinkJobeetBundle:Job:new" }
+    methods:  [GET, POST]
+
+job_edit:
+    path:     /{token}/edit
+    defaults: { _controller: "LinkJobeetBundle:Job:edit" }
+    methods:  [GET, POST]
+
+job_delete:
+    path:     /{token}/delete
+    defaults: { _controller: "LinkJobeetBundle:Job:delete" }
+    methods:  DELETE
+
+job_publish:
+    path:  /{token}/publish
+    defaults: { _controller: "LinkJobeetBundle:Job:publish" }
+    methods: POST
+
+job_extend:
+    path:  /{token}/extend
+    defaults: { _controller: "LinkJobeetBundle:Job:extend" }
+    methods: POST
